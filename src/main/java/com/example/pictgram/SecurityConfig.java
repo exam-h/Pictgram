@@ -35,6 +35,7 @@ public class SecurityConfig {
 		h2RequestMatcher.setServletPath("/h2-console");
 
 		RequestMatcher publicMatchers = new OrRequestMatcher(new AntPathRequestMatcher("/"),
+				new AntPathRequestMatcher("/favicon.ico"),
 				new AntPathRequestMatcher("/error"), new AntPathRequestMatcher("/h2-console/**"),
 				new AntPathRequestMatcher("/login"), new AntPathRequestMatcher("/users/new"),
 				new AntPathRequestMatcher("/user"), new AntPathRequestMatcher("/css/**"),
